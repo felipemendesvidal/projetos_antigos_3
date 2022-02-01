@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualLightBox>
+    <Gallery version="2.5">
+        <Settings>
+            <AutoPlay>true</AutoPlay>
+            <DescSliding>true</DescSliding>
+            <GalleryMultipleSuffix>1</GalleryMultipleSuffix>
+            <GalleryName>galeria-guaiauna-2017</GalleryName>
+            <GalleryOptionID>1</GalleryOptionID>
+            <HoverStart>false</HoverStart>
+            <ImageAspectRatio>true</ImageAspectRatio>
+            <ImageEngine>jquery</ImageEngine>
+            <ImageHeight>600</ImageHeight>
+            <ImageQuality>90</ImageQuality>
+            <ImageShrink>true</ImageShrink>
+            <ImageStretch>false</ImageStretch>
+            <ImageTemplate>13. Chrome</ImageTemplate>
+            <ImageTemplateName>Chrome</ImageTemplateName>
+            <ImageWidth>800</ImageWidth>
+            <PublishFileName>C:/Users/Rabb0014/Desktop/Rabbit/Clientes/guaiauna/Material/site 2017/estrutura-guaiauna-baby/index.html</PublishFileName>
+            <PublishIndex>index.html</PublishIndex>
+            <PublishPath>C:/Users/Rabb0014/Desktop/Rabbit/Clientes/guaiauna/Material/site 2017/estrutura-guaiauna-baby</PublishPath>
+            <PublishPreview>true</PublishPreview>
+            <PublishType>file</PublishType>
+            <RelPaths>false</RelPaths>
+            <ResizeSpeed>7</ResizeSpeed>
+            <RightClick>false</RightClick>
+            <SlideShow>true</SlideShow>
+            <SlideShowDelay>4</SlideShowDelay>
+            <ThumbColumns>0</ThumbColumns>
+            <ThumbFitImage>false</ThumbFitImage>
+            <ThumbFormat>jpg</ThumbFormat>
+            <ThumbHeight>220</ThumbHeight>
+            <ThumbQuality>90</ThumbQuality>
+            <ThumbTemplate>No Frame</ThumbTemplate>
+            <ThumbTemplateName>No Frame</ThumbTemplateName>
+            <ThumbWidth>300</ThumbWidth>
+        </Settings>
+        <Images/>
+    </Gallery>
+</VisualLightBox>

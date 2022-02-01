@@ -1,0 +1,204 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SolutSoft.CAS.Pages.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" href="../logo2.ico" />
+    <script type="text/javascript" src="../../Scripts/jquery.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-ui.js"></script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <link href="../Styles/style.css" type="text/css" rel="Stylesheet" />
+    <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Scripts/scriptbreaker-multiple-accordion-1.js"></script>
+    <script language="javascript" type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(".topnav").accordion({
+                accordion: true,
+                speed: 300,
+                closedSign: '+',
+                openedSign: '-'
+            });
+            return false;
+        });
+
+        function abrePost(url) {
+            window.open(url, "_blank");
+        }
+
+    </script>
+    <script language="javascript" type="text/javascript" src="../../Scripts/jquery.mask.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.ra').mask('000000000-0');
+            $('#txtSearch').onFocus = function () {
+                document.getElementById("txtSearch").value = "";
+            }
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="divmaster" runat="server">
+            <div class="divtop">
+                <asp:ImageButton ID="imbLogo" runat="server" PostBackUrl="~/Pages/Home.aspx" ImageUrl="~/Pages/Admin/Images/Logo10.png" BorderWidth="0" ImageAlign="Left" />
+                <asp:Image ID="ImageButton1" runat="server" PostBackUrl="~/Pages/Home.aspx" ImageUrl="~/Pages/Admin/Images/Topo10.png" BorderWidth="0" />
+            </div>
+            <div class="divwebmail">
+                <table border="0" cellpadding="0" cellspacing="0" runat="server">
+                    <tr align="center">
+                        <td>
+                            <asp:ImageButton ID="imbWebMail" runat="server" ImageUrl="~/Pages/Admin/Images/Icones/mail.png"
+                                OnClick="imbWebMail_Click" Width="65px" />
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="lkbWebMail1" runat="server" Text="WebMail do" CssClass="webmail"
+                                OnClick="imbWebMail_Click"></asp:LinkButton>
+                            <asp:LinkButton ID="lkbWebMail2" runat="server" Text="PROFESSOR!" CssClass="title6"
+                                OnClick="imbWebMail_Click"></asp:LinkButton>
+                            <asp:LinkButton ID="lkbWebMail3" runat="server" Text="clique aqui" CssClass="webmail"
+                                OnClick="imbWebMail_Click"></asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="divsearch" runat="server">
+                <asp:Panel ID="pnlSearch" runat="server" DefaultButton="imbSearch">
+                    <asp:Label ID="lblPesquisa" runat="server" CssClass="lblsearch" Text="Busca no site: "></asp:Label>
+                    <asp:TextBox ID="txtSearch" runat="server" CssClass="busca"></asp:TextBox><asp:ImageButton ID="imbSearch" runat="server" ImageUrl="~/Pages/Admin/Images/Icones/searchbutton5.png" OnClick="imbSearch_Click" CssClass="imagesearch" TabIndex="1" />
+                </asp:Panel>
+            </div>
+            <div class="divmenu" runat="server">
+                <table class="tables" border="0" cellpadding="0" cellspacing="0" runat="server">
+                    <tr>
+                        <td width="100%" class="tables" bgcolor="white" style="vertical-align: top;">
+                            <ul class="topnav">
+                                <asp:Literal ID="litMenu" runat="server">
+                                    
+                                </asp:Literal>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="tables" border="0" cellpadding="0" cellspacing="0" runat="server">
+                    <tr>
+                        <td colspan="2">
+                            <asp:Label ID="Label4" runat="server" CssClass="menutitle3" Text="NEWSLETTER" Width="196px"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="divnews">
+                                <asp:Panel ID="pnlNews" runat="server" Visible="true" DefaultButton="btnEnviar">
+                                    <asp:Image ID="imgNews" runat="server" ImageUrl="~/Pages/Admin/Images/Icones/News.png" Width="50px" ImageAlign="Left"></asp:Image>
+                                    <asp:Label ID="Label5" runat="server" Text="Cadastre-se para receber nosso jornal!"></asp:Label><br />
+                                    <asp:Label ID="Label6" runat="server" Text="E-mail:"></asp:Label>
+                                    <asp:TextBox ID="txtEmail" runat="server" CssClass="textbox1" MaxLength="100" Width="120px"></asp:TextBox>
+                                    <asp:Label ID="lblMsgn" runat="server" Width="180px" ForeColor="Red" Visible="false"></asp:Label>
+                                    <asp:Button ID="btnEnviar" runat="server" CssClass="button4" Text="Enviar" OnClick="btnEnviar_Click" />
+                                </asp:Panel>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table id="Table2" class="tables" border="0" cellpadding="0" cellspacing="0" runat="server">
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblAL" runat="server" CssClass="menutitle" Text="ÁREA DO ALUNO" Width="196px"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="divlogin">
+                                <asp:Panel ID="pnlLogin" runat="server" Visible="true" DefaultButton="btnEntrar"
+                                    Width="100%">
+                                    <asp:Label ID="lblRa" runat="server" Text="RA:" Width="25px"></asp:Label>
+                                    <asp:TextBox ID="txtRa" runat="server" CssClass="textbox1 ra" Width="100px"></asp:TextBox>
+                                    <asp:Label ID="lblSenha" runat="server" Text="Senha:" Width="48px"></asp:Label>
+                                    <asp:TextBox ID="txtSenha" runat="server" CssClass="textbox1" Width="100px" TextMode="Password"
+                                        MaxLength="16"></asp:TextBox>
+                                    <asp:Label ID="lblMsg" runat="server" Text="RA ou Senha inválidos!" Width="180px"
+                                        ForeColor="Red" Visible="false"></asp:Label><br />
+                                    <asp:Button ID="btnEntrar" runat="server" CssClass="button1" Text="Entrar" OnClick="btnEntrar_Click" />
+                                </asp:Panel>
+                                <asp:Panel ID="pnlAluno" runat="server" Visible="false">
+                                    <asp:Label ID="Label2" runat="server" Text="Olá, "></asp:Label>
+                                    <asp:Label ID="lblAluno" runat="server" CssClass="title7"></asp:Label><br />
+                                    <asp:Label ID="Label3" runat="server" Text="Seja bem-vindo!"></asp:Label>
+                                    <asp:LinkButton ID="lkbSair" runat="server" Text="Sair" OnClick="lkbSair_Click"></asp:LinkButton><br />
+                                    <br />
+                                    <asp:Button ID="btnAreaAluno" runat="server" CssClass="button1" Text="Meu CAS" PostBackUrl="~/Pages/AreaAluno.aspx" />
+                                </asp:Panel>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="divcontent" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="divright" class="divright">
+                <table id="Table1" class="tables" border="0" cellpadding="0" cellspacing="0" runat="server">
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label1" runat="server" CssClass="menutitle2" Text="REDES SOCIAIS"
+                                Width="166px"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="169px" style="background-color: #fff; text-align: center;">
+                            <a target="_blank" style="text-decoration:none;" href="https://www.facebook.com/pages/Col%C3%A9gio-Almeida-Santos/163920423690314" ><img height="22px" alt="banner" src="Admin/Images/Icones/facebook.png" class="imageredes" /></a>
+                            <a target="_blank" style="text-decoration:none;" href="https://twitter.com/calmeidasantos"><img height="22px" alt="banner" src="Admin/Images/Icones/twitter.png" class="imageredes" /></a>
+                            <a target="_blank" style="text-decoration:none;" href="https://www.youtube.com/channel/UCj_jLyaPHbhHp_NGne3hbYQ/feed?view_as=public"><img height="22px" alt="banner" src="Admin/Images/Icones/youtube.png" class="imageredes" /></a>
+                            <a target="_blank" style="text-decoration:none;" href="https://plus.google.com/110257694897179025907/posts"><img height="22px" alt="banner" src="Admin/Images/Icones/gplus.png" class="imageredes" /></a>
+                            <asp:Image ID="imgApple" runat="server" CssClass="imageredes" Height="22px"
+                                ImageUrl="~/Pages/Admin/Images/Icones/apple.png" />
+                            <asp:Image ID="imgAndroid" runat="server" CssClass="imageredes" Height="22px"
+                                ImageUrl="~/Pages/Admin/Images/Icones/android.png" />
+                        </td>
+                    </tr>
+                </table>
+                <asp:Repeater ID="rptBannersDireita" runat="server">
+                    <ItemTemplate>
+                        <a target="_blank" href='<%# Eval("DsDestino") %>'><img alt="banner" src="<%# Eval("DsCaminho") %>" class="imageright" /> </a>
+                    </ItemTemplate>
+                </asp:Repeater>
+
+            </div>
+            <div class="divbottom">
+
+                <table class="tables" cellpadding="0" cellspacing="0" runat="server">
+                    <tr>
+                        <td width="824px" class="tablebottom">
+                            <asp:Image ID="Image1" runat="server" PostBackUrl="~/Pages/Home.aspx" ImageUrl="~/Pages/Admin/Images/Rodape1.png" Width="853px" />
+                        </td>
+                        <td>
+                            <asp:Image ID="Image3" runat="server" PostBackUrl="~/Pages/Home.aspx" ImageUrl="~/Pages/Admin/Images/Rodape2.png" CssClass="imagefooter" Width="170px" />
+                        </td>
+                    </tr>
+                </table>
+                <asp:Label ID="lblErro" runat="server" ForeColor="Red" Visible="false" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="SolutSoft.CAS.Pages.Admin.Admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" href="../../logo2.ico" />
+    <link href="../../Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../../Styles/style.css" type="text/css" rel="Stylesheet" />
+    <script type="text/javascript" src="../../Scripts/jquery.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../Scripts/scriptbreaker-multiple-accordion-1.js"></script>
+    <script language="javascript" type="text/javascript">
+
+        $(document).ready(function () {
+            $(".topnav").accordion({
+                accordion: true,
+                speed: 300,
+                closedSign: '+',
+                openedSign: '-'
+            });
+            return false;
+        });
+
+        function ShowCurrentTime(i) {
+            PageMethods.GetCurrentTime(i);
+        }
+        
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+    </asp:ScriptManager>
+    <div class="divmaster" runat="server" width="1024px">
+        <div class="divtop">
+            <asp:ImageButton ID="imbLogo" runat="server" PostBackUrl="~/Pages/Admin/Home.aspx"
+                ImageUrl="~/Pages/Admin/Images/logo.jpg" Width="200px" Height="170px" />
+        </div>
+        <div id="cssmenu">
+            <ul>
+                <li><a href="Home.aspx"><span>Home</span></a></li>
+                <asp:Literal ID="litMenuSup" runat="server">
+                                
+                </asp:Literal>
+                <li><a href="Usuario.aspx"><span>Alterar login/senha</span></a></li>
+                <li><a href="#" runat="server" onserverclick="lkbSair_Click"><span>Sair</span></a></li>
+            </ul>
+        </div>
+        <div class="divmenu" runat="server">
+            <table id="Table1" class="tables" border="0" cellpadding="0" cellspacing="0" runat="server">
+                <tr>
+                    <td width="100%" class="tables" bgcolor="white" style="vertical-align: top;">
+                        <ul class="topnav">
+                            <asp:Literal ID="litMenu" runat="server">
+                                
+                            </asp:Literal>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="divcontentadmin" runat="server">
+            <table class="tables" runat="server">
+                <tr>
+                    <td height="auto" valign="top">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table class="tables" cellpadding="0" cellspacing="0" runat="server">
+            <tr>
+                <td class="logocatolicanet">
+                    <asp:Label ID="lblPowered" runat="server" Text="Powered By" Style="font-size: x-small;
+                        font-family: Tahoma; font-weight: bold; color: #38557C;"></asp:Label><br />
+                    <asp:ImageButton ID="imgSolut" runat="server" ImageUrl="~/Pages/Admin/Images/solutsoft2.jpg"
+                        PostBackUrl="http://www.solutsoft.com.br" Width="80px" Style="text-align: center" /><br />
+                </td>
+                <td width="820px" class="tablebottom">
+                </td>
+            </tr>
+        </table>
+        <asp:Label ID="lblErro" runat="server" ForeColor="Red" Visible="false" />
+    </div>
+    </form>
+</body>
+</html>

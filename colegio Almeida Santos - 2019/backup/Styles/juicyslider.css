@@ -1,0 +1,97 @@
+/**
+ * Juicy Slider styles sheet
+ *
+ * (c) 2013 by Van Ting
+ *
+ */
+
+
+html, body {
+    /* CSS reset */
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.juicyslider {
+    position: relative;
+    padding:0;
+    margin:0;
+    border: 0;
+}
+
+.juicyslider ul {
+    width:100%;
+    height:100%;
+    position:absolute;
+    overflow: hidden;
+    list-style: none outside none;
+    padding:0;
+    margin:0;
+}
+
+.juicyslider li {
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display:none;       /* all hidden initially */
+}
+
+.juicyslider li:first-child {
+    display: block;
+}
+
+.juicyslider .nav {
+    position: absolute;
+    top: 120px;
+    padding: 20px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    z-index: 1000;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    background-image: url(../Pages/Admin/Images/nav-40.png);
+}
+
+.juicyslider:hover .nav {
+    opacity: .5;
+    filter: alpha(opacity=50); 
+}
+
+.juicyslider .nav.next {
+    right: 0;
+}
+
+.juicyslider .nav.prev {
+    left: 0;
+    background-position: 40px 0;
+}
+
+.juicyslider .mask {
+    background-image: none;
+    position: absolute;
+    width: 1020px;
+    height: 160px;
+    z-index: 100;
+}
+
+.juicyslider img.maxw {
+    width: 1020px;
+    height: 160px;
+    max-height: none;
+    position: absolute;
+    filter:inherit;     /* for ie8 to inherit parent opacity */
+}
+
+.juicyslider img.maxh {
+    
+    max-width: 1020px;
+    height: 160px;
+    position: absolute;
+    filter:inherit;     /* for ie8 to inherit parent opacity */
+}
